@@ -31,7 +31,7 @@ public class Demo {
 	//	DesiredCapabilities capabilities = DesiredCapabilities.chrome();
           //      capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
             //    driver = new ChromeDriver(capabilities);
-		driver=new ChromeDriver(options);
+	//	driver=new ChromeDriver(options);
 		driver.get(appUrl);
 	}
 	
