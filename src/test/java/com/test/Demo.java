@@ -11,7 +11,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class Demo {
 
 	private static WebDriver driver;
-	private static String appUrl = "http://3.128.25.199:8080/JavaServletLogin/";
+	//private static String appUrl = "http://3.128.25.199:8080/JavaServletLogin/";
+	private static String appUrl = "http://100.25.103.73:8081/JavaServletLogin/";
 
 	
 	public void driverInit() {
