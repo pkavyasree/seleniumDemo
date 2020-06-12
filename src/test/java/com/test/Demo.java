@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import java.util.concurrent.TimeUnit;
+//import java.util.concurrent.TimeUnit;
 
 public class Demo {
 
@@ -17,6 +17,11 @@ public class Demo {
 	public void driverInit() {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//lib//chromedriver");
 		ChromeOptions options = new ChromeOptions();
+		options.setExperimentalOption("prefs", chromePrefs);
+                options.addArguments("--no-sandbox");
+                options.addArguments("--headless");
+                options.addArguments("--disable-dev-shm-usage");
+                options.addArguments("--window-size=1920x1080");
 		options.addArguments("--headless");
 		driver=new ChromeDriver(options);
 		driver.get(appUrl);
@@ -25,7 +30,7 @@ public class Demo {
 	public void launchApp() {
 		driver.get(appUrl);
 		driver.manage().window().maximize();
-		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		//driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	}
 	
 	public void login(String userName,String password) {
