@@ -7,17 +7,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
-//import java.util.concurrent.TimeUnit;
 
 public class Demo {
 
 	private static WebDriver driver;
 	private static String appUrl = "http://3.128.25.199:8080/JavaServletLogin/";
+
 	
 	public void driverInit() {
+		
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//lib//chromedriver");
-		ChromeOptions options = new ChromeOptions();
+                ChromeOptions options = new ChromeOptions();
 		//options.setExperimentalOption("prefs", chromePrefs);
                 options.addArguments("--no-sandbox");
                 options.addArguments("--headless");
@@ -30,7 +30,6 @@ public class Demo {
 	public void launchApp() {
 		driver.get(appUrl);
 		driver.manage().window().maximize();
-		//driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	}
 	
 	public void login(String userName,String password) {
@@ -54,12 +53,13 @@ public class Demo {
 	@Test
 	public void loginSuccessCase() {
 		loginToApp("admin", "admin");
-		System.out.println("Testcase passed");
+	//System.out.println("Testcase passed");
 	}
 	
 	//@Test
 	public void loginFailCase() {
 		loginToApp("admin", " ");
+	//System.out.println("Testcase Failed");
 	}
 	
 	@After
