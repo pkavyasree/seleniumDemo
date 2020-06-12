@@ -18,20 +18,12 @@ public class Demo {
 	public void driverInit() {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//lib//chromedriver");
 		ChromeOptions options = new ChromeOptions();
+		//options.setExperimentalOption("prefs", chromePrefs);
                 options.addArguments("--no-sandbox");
                 options.addArguments("--headless");
                 options.addArguments("--disable-dev-shm-usage");
                 options.addArguments("--window-size=1920x1080");
-		options.addArguments("--headless");
-	//	ChromeOptions opt = new ChromeOptions();
-          //      options.addExtensions(new File(“path for crx file of the extension”));
-            //    DesiredCapabilities capabilities = new DesiredCapabilities();
-		//capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-                //ChromeDriver driver = new ChromeDriver(capabilities);
-	//	DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-          //      capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-            //    driver = new ChromeDriver(capabilities);
-	//	driver=new ChromeDriver(options);
+		driver=new ChromeDriver(options);
 		driver.get(appUrl);
 	}
 	
@@ -62,6 +54,7 @@ public class Demo {
 	@Test
 	public void loginSuccessCase() {
 		loginToApp("admin", "admin");
+		System.out.println("Testcase passed");
 	}
 	
 	//@Test
