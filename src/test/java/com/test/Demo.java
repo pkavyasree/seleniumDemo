@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 //import java.util.concurrent.TimeUnit;
 
 public class Demo {
@@ -22,9 +23,14 @@ public class Demo {
                 options.addArguments("--disable-dev-shm-usage");
                 options.addArguments("--window-size=1920x1080");
 		options.addArguments("--headless");
-		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-                capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-                driver = new ChromeDriver(capabilities);
+	//	ChromeOptions opt = new ChromeOptions();
+          //      options.addExtensions(new File(“path for crx file of the extension”));
+            //    DesiredCapabilities capabilities = new DesiredCapabilities();
+		//capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+                //ChromeDriver driver = new ChromeDriver(capabilities);
+	//	DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+          //      capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+            //    driver = new ChromeDriver(capabilities);
 		driver=new ChromeDriver(options);
 		driver.get(appUrl);
 	}
@@ -58,7 +64,7 @@ public class Demo {
 		loginToApp("admin", "admin");
 	}
 	
-	@Test
+	//@Test
 	public void loginFailCase() {
 		loginToApp("admin", " ");
 	}
