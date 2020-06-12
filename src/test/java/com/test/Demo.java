@@ -54,7 +54,7 @@ public class Demo {
 	@Test
 	public void loginSuccessCase() {
 		loginToApp("admin", "admin");
-	//System.out.println("Testcase passed");
+	System.out.println("Testcase passed");
 	}
 	
 	//@Test
