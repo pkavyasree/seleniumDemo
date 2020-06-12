@@ -12,7 +12,6 @@ public class Demo {
 
 	private static WebDriver driver;
 	private static String appUrl = "http://3.128.25.199:8080/JavaServletLogin/";
-
 	
 	public void driverInit() {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//lib//chromedriver");
