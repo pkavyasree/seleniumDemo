@@ -22,6 +22,9 @@ public class Demo {
                 options.addArguments("--disable-dev-shm-usage");
                 options.addArguments("--window-size=1920x1080");
 		options.addArguments("--headless");
+		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+                capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+                driver = new ChromeDriver(capabilities);
 		driver=new ChromeDriver(options);
 		driver.get(appUrl);
 	}
