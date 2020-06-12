@@ -24,6 +24,7 @@ public class Demo {
 	public void launchApp() {
 		driver.get(appUrl);
 		driver.manage().window().maximize();
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	}
 	
 	public void login(String userName,String password) {
